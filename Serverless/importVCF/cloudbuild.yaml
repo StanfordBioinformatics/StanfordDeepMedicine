@@ -5,6 +5,7 @@ steps:
       - functions
       - deploy
       - importVCF2
+      - --runtime=python3
       - --region=us-central1
       - --source=Serverless/importVCF
       - --trigger-resource=gene222-serverless-demo
