@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args: 
+      - gcloud
+      - functions
+      - deploy
+      - importVCF
+      - --region=us-west1
+      - --source=Serverless/importVCF
+      - --trigger-resource gene222-serverless-demo
+      - --trigger-event google.storage.object.finalize
