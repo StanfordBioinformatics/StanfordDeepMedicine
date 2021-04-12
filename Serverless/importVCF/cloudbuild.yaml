@@ -7,5 +7,5 @@ steps:
       - importVCF
       - --region=us-west1
       - --source=Serverless/importVCF
-      - --trigger-resource gene222-serverless-demo
-      - --trigger-event google.storage.object.finalize
+      - --trigger-resource=gene222-serverless-demo
+      - --trigger-event=google.storage.object.finalize
