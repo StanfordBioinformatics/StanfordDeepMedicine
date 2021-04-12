@@ -5,7 +5,7 @@ steps:
       - functions
       - deploy
       - importVCF
-      - --region=us-west1
+      - --region=us-central1
       - --source=Serverless/importVCF
       - --trigger-resource=gene222-serverless-demo
       - --trigger-event=google.storage.object.finalize
