@@ -1,0 +1,16 @@
+{
+  "Mutect2.scatter_count": 75,
+  "Mutect2.run_ob_filter": true,
+
+  "Mutect2.tumor_bam": "gs://gatk-tutorials/workshop_2002/3-somatic/bams/tumor.bam",
+  "Mutect2.tumor_bai": "gs://gatk-tutorials/workshop_2002/3-somatic/bams/tumor.bai",
+  "Mutect2.normal_bam": "gs://gatk-tutorials/workshop_2002/3-somatic/bams/normal.bam",
+  "Mutect2.normal_bai": "gs://gatk-tutorials/workshop_2002/3-somatic/bams/normal.bai",
+
+  "Mutect2.ref_dict": "gs://gatk-tutorials/workshop_2002/3-somatic/ref/Homo_sapiens_assembly38.dict",
+  "Mutect2.ref_fasta": "gs://gatk-tutorials/workshop_2002/3-somatic/ref/Homo_sapiens_assembly38.fasta",
+  "Mutect2.ref_fai": "gs://gatk-tutorials/workshop_2002/3-somatic/ref/Homo_sapiens_assembly38.fasta.fai",
+  "Mutect2.intervals": "gs://gatk-tutorials/workshop_2002/3-somatic/resources/chr17plus.interval_list",
+
+  "Mutect2.gatk_docker": "broadinstitute/gatk:4.1.9.0"
+}
