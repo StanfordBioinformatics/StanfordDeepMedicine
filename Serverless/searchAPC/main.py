@@ -1,8 +1,11 @@
+import os
 import json
 import base64
 
 from google.cloud import bigquery
 from google.cloud import storage
+
+STORAGE_BUCKET = os.environ['STORAGE_BUCKET']
 
 def main(event, context):
     """Triggered from a message on a Cloud Pub/Sub topic.
