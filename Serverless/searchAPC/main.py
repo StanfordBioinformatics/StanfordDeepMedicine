@@ -41,7 +41,7 @@ def main(event, context):
     
     rows_string = ""
     for row in rows:
-      rows_string += f"{row["rsid"]}" + "\n"
+      rows_string += f"{row['rsid']}" + "\n"
 
     storage_client = storage.Client()
     bucket = storage_client.get_bucket(STORAGE_BUCKET)
