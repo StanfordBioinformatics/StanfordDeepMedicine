@@ -22,7 +22,7 @@ def main(event, context):
 
     # Example: "projects/gbsc-gcp-class-gene222-spr21/datasets/1000g/tables/1000g_APC_PBR"
     resource_name = data["protoPayload"]["resourceName"]
-    elements = resouce_name.split("/")
+    elements = resource_name.split("/")
     project_id = elements[1]
     dataset_id = elements[3]
     table_name = elements[5]
