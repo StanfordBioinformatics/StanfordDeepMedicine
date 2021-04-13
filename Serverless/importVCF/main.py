@@ -16,7 +16,7 @@ project_id = 'gbsc-gcp-class-gene222-spr21'
 topic_id = 'projects/gbsc-gcp-class-gene222-spr21/topics/test'
 
 
-def hello_gcs(event, context):
+def main(event, context):
     """Triggered by a change to a Cloud Storage bucket.
     Args:
          event (dict): Event payload.
@@ -59,6 +59,12 @@ def hello_gcs(event, context):
         load_job = client.load_table_from_uri(
             uri, table_id, job_config=job_config
         )  # Make an API request.
+
+        # Check whether table exists and create if not
+        try: 
+            table = client.get_table(table_id)
+        except:
+            table = bigquery.Table(table_id, schema=schema)
 
         load_job.result()  # Wait for the job to complete.
 

@@ -1,0 +1,13 @@
+steps:
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args: 
+      - gcloud
+      - functions
+      - deploy
+      - importVCF2
+      - --runtime=python37
+      - --entry-point=main
+      - --region=us-central1
+      - --source=Serverless/importVCF
+      - --trigger-resource={YOUR BUCKET NAME}
+      - --trigger-event=google.storage.object.finalize
