@@ -31,10 +31,6 @@ def main(event, context):
     try:
         client = bigquery.Client()
 
-        # TODO(developer): Set table_id to the ID of the table to create.
-        #table_id = "gbsc-gcp-class-gene222-spr21.1000g.sampleVCF"
-        
-#        table_id = '{}.{}.{}'.format(project_id,dataset_id,'sampleVCF')
         table_id = '{}.{}.{}'.format(project_id,dataset_id,os.path.splitext(event['name'])[0])
 
         #uri = "gs://gene222_datasets/sample.csv"
@@ -70,24 +66,8 @@ def main(event, context):
 
         table = client.get_table(table_id)
         print("Loaded {} rows to table {}".format(table.num_rows, table_id))
-
-        print(f"Push Message")
-        tableAttribute = table_id 
-        print(topic_id)
-        publisher.publish(topic_id, b'', tableAttribute=tableAttribute)
         
         return f"OK"
     except Exception as e:
         print(e)
         return (e, 500)    
-
-
-
-#    client = storage.Client()
-#    vcf_bucket = client.get_bucket(event['bucket'])
-#    print(vcf_bucket)
-#    vcf_blob = vcf_bucket.get_blob(event['name'])
-#    print(vcf_blob)
-
-#    data_string = vcf_blob.download_as_string()
-# Construct a BigQuery client object.

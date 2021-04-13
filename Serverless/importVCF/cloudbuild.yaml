@@ -4,10 +4,10 @@ steps:
       - gcloud
       - functions
       - deploy
-      - importVCF2
+      - importVCF
       - --runtime=python37
       - --entry-point=main
       - --region=us-central1
       - --source=Serverless/importVCF
-      - --trigger-resource={YOUR BUCKET NAME}
+      - --trigger-resource=gene222-serverless-variants
       - --trigger-event=google.storage.object.finalize
