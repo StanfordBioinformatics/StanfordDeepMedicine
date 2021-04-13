@@ -3,9 +3,9 @@
 2. Clone the repository to your local computer 
   
     ```git clone {your repo URL}```
-## Configure Cloud Build and Functions settings: https://cloud.google.com/build/docs/deploying-builds/deploy-functions#yaml_1
-2. Enable the Cloud Build API 
-3. Enable the Cloud Functions API
+## Configure Cloud Build and Functions settings: 
+2. Enable the Cloud Build API (https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
+3. Enable the Cloud Functions API (https://cloud.google.com/build/docs/deploying-builds/deploy-functions#yaml_1)
 4. Set the Cloud Build the Cloud Functions Developer role to Enabled
 5. Connect your forked GitHub repository
 ## Create Cloud Build triggers
