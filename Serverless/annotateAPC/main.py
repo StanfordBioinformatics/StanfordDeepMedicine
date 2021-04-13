@@ -86,9 +86,9 @@ ON
     
     rows_string = ""
     for row in rows:
-      rows_string += f"{row['rsID']}" + "\n"
+      rows_string += f"{row['chrm']},{row['start_position']},{row['end_position']},{row['rsID']},{row['COSMIC_INFO']}" + "\n"
 
-    #storage_client = storage.Client()
-    #bucket = storage_client.get_bucket(STORAGE_BUCKET)
-    #composed_blob = bucket.blob("apc-gene-rsids.txt")
-    #composed_blob.upload_from_string(rows_string)
+    storage_client = storage.Client()
+    bucket = storage_client.get_bucket(STORAGE_BUCKET)
+    composed_blob = bucket.blob("apc-gene-annotations.csv")
+    composed_blob.upload_from_string(rows_string)
