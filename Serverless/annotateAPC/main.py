@@ -88,7 +88,7 @@ ON
     for row in rows:
       rows_string += f"{row['rsID']}" + "\n"
 
-    storage_client = storage.Client()
-    bucket = storage_client.get_bucket(STORAGE_BUCKET)
-    composed_blob = bucket.blob("apc-gene-rsids.txt")
-    composed_blob.upload_from_string(rows_string)
+    #storage_client = storage.Client()
+    #bucket = storage_client.get_bucket(STORAGE_BUCKET)
+    #composed_blob = bucket.blob("apc-gene-rsids.txt")
+    #composed_blob.upload_from_string(rows_string)

@@ -4,7 +4,7 @@ steps:
       - gcloud
       - functions
       - deploy
-      - searchAPC2
+      - annotateAPC
       - --runtime=python37
       - --entry-point=main
       - --region=us-central1
