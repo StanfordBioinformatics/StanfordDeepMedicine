@@ -8,6 +8,6 @@ steps:
       - --runtime=python37
       - --entry-point=main
       - --region=us-central1
-      - --source=Serverless/searchAPC
-      - --trigger-topic=bigquery-events
+      - --source=Serverless/annotateAPC
+      - --trigger-topic=bigquery-insert-events
       - --update-env-vars=STORAGE_BUCKET=gene222-serverless-demo
