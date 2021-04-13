@@ -60,6 +60,12 @@ def main(event, context):
             uri, table_id, job_config=job_config
         )  # Make an API request.
 
+        # Check whether table exists and create if not
+        try: 
+            table = client.get_table(table_id)
+        except:
+            table = bigquery.Table(table_id, schema=schema)
+
         load_job.result()  # Wait for the job to complete.
 
         table = client.get_table(table_id)
