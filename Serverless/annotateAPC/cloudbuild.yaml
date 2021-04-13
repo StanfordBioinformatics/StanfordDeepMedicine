@@ -10,4 +10,4 @@ steps:
       - --region=us-central1
       - --source=Serverless/annotateAPC
       - --trigger-topic=bigquery-insert-events
-      - --update-env-vars=STORAGE_BUCKET=gene222-serverless-demo
+      - --update-env-vars=STORAGE_BUCKET=gene222-serverless-annotations
