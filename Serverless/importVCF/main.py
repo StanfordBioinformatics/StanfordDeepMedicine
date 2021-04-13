@@ -16,7 +16,7 @@ project_id = 'gbsc-gcp-class-gene222-spr21'
 topic_id = 'projects/gbsc-gcp-class-gene222-spr21/topics/test'
 
 
-def hello_gcs(event, context):
+def main(event, context):
     """Triggered by a change to a Cloud Storage bucket.
     Args:
          event (dict): Event payload.
