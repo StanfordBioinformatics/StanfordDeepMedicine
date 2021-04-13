@@ -39,7 +39,49 @@ def main(event, context):
       f"FROM `{table_id}` " +
       'WHERE start_position > 112073558 AND start_position < 112181934 ' +
       'LIMIT 100')
-    query_job = client.query(QUERY)  # API request
+
+    ANNOTATION_QUERY = (f"""
+      SELECT
+  A.chrm,
+  A.start_position,
+  A.end_position,
+  A.reference_bases,
+  A.alternate_bases,
+  rsID,
+  qual,
+  FILTER,
+  info,
+  COSMIC_INFO
+FROM (
+  SELECT
+    chrm,
+    start_position,
+    end_position,
+    reference_bases,
+    alternate_bases,
+    rsID,
+    qual,
+    FILTER,
+    info
+  FROM
+    `{table_id}`) AS A
+JOIN (
+  SELECT
+    chrm,
+    start_position,
+    end_position,
+    reference_bases,
+    alternate_bases,
+    COSMIC_INFO
+  FROM
+    `gbsc-gcp-class-gene222-spr21.annotations.hg19_cosmic68`) AS B
+ON
+  A.chrm=B.chrm
+  AND A.start_position=B.start_position
+  AND A.end_position=B.end_position
+  AND A.alternate_bases=B.alternate_bases""")
+
+    query_job = client.query(ANNOTATION_QUERY)  # API request
     rows = query_job.result()  # Waits for query to finish
     
     rows_string = ""
