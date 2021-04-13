@@ -71,10 +71,10 @@ def main(event, context):
         table = client.get_table(table_id)
         print("Loaded {} rows to table {}".format(table.num_rows, table_id))
 
-        print(f"Push Message")
-        tableAttribute = table_id 
-        print(topic_id)
-        publisher.publish(topic_id, b'', tableAttribute=tableAttribute)
+        #print(f"Push Message")
+        #tableAttribute = table_id 
+        #print(topic_id)
+        #publisher.publish(topic_id, b'', tableAttribute=tableAttribute)
         
         return f"OK"
     except Exception as e:
