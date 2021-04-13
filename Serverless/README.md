@@ -19,6 +19,7 @@
   2. In the Cloud Shell, run the following command:
     ```gsutil cp gs://gene222_datasets/1000g_APC.csv gs://{YOUR BUCKET}```
 10. Navigate to the BigQuery console and check that a new "1000g_APC" table has been created in the "1000g" dataset (https://console.cloud.google.com/bigquery)
+## Create a logging sink for BigQuery events to trigger annotateAPC
 11. Create a Logging sink for BigQuery data (https://console.cloud.google.com/logs/router)
   1. Click on the "CREATE SINK" button at the top of the page, in blue
   2. Add sink details
@@ -29,4 +30,14 @@
     2. Select Cloud Pub/Sub topic: new topic (name: bigquery-insert-events)
   4. Create the query to get logs specific to BigQuery insertion events
     1. Click on "PREVIEW LOGS"
-    2.
+    2. Select "BigQuery" under "Resource Type" to just see BigQuery logs
+    3. Click on a "jobservice.insert" job to generate a query to just see these logs (top of page)
+    4. Copy the query and paste it back into the "Create logs routing sink" page
+    5. Click the "PREVIEW LOGS" button again to validate that your query is getting the right logs
+    6. Go back to the "Create logs routing sink" page and smash that "CREATE SINK" button (like & subscribe)
+## Validate that the importVCF function works
+12. Copy the data object into your bucket
+  1. Open Cloud Shell using the console (>_) button in the top right of your screen, next to the question mark
+  2. In the Cloud Shell, run the following command:
+    ```gsutil cp gs://gene222_datasets/1000g_APC.csv gs://{YOUR BUCKET}```
+13. Navigate to the BigQuery console and check that a new "1000g_APC" table has been _annotated_ in the "1000g" dataset (https://console.cloud.google.com/bigquery)
