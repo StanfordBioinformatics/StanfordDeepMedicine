@@ -57,4 +57,6 @@ An example set of inputs is provided in rnaseq-bulk.aws.json.
    If you get a bucket not found error during execution, first check whether you have access to the buckets listed in prepare-genome.json by executing ```aws s3 ls <bucket-name>```
    If you do have access, copy the files listed in prepare-genome.json to your S3 bucket and provide the path in the prepare-genome.json file
    Also check the region you've configured the aws cli in, and it should match with the region listed in aws.conf(us-east-2)
-8. 
+8. Edit the ```rnaseq.star_rsem_index_base``` parameter in rnaseq-bulk.aws.json to add in the bucket where the outputs of the prepare-genome workflow were stored
+9. Edit the rnaseq-bulk.aws.options.json file to add in the bucket where the final output is going to be stored
+10. Execute ```java -Dconfig.file=aws.conf -jar cromwell-55.jar run rnaseq-bulk.aws.wdl -i rnaseq-bulk.aws.json -o rnaseq-bulk.aws.options.json```
