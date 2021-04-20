@@ -1,0 +1,5 @@
+{
+    "final_workflow_outputs_dir":"s3://<OUTPUT_BUCKET>/workflows/rnaseq-bulk/outputs/<EXPERIMENT_123>",
+    "use_relative_output_paths": true,
+    "read_from_cache": true
+}
