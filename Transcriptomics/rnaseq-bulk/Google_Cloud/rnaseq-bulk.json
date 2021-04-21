@@ -1,0 +1,86 @@
+{
+    "rnaseq.input_samples": [{
+        "r1_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX1603629_T1_1.fastq.gz",
+        "r2_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX1603629_T1_2.fastq.gz",
+        "sample_name": "SRX1603629",
+        "strandedness":"reverse"
+    },{
+        "r1_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX1603630_T1_1.fastq.gz",
+        "r2_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX1603630_T1_2.fastq.gz",
+        "sample_name": "SRX1603630",
+        "strandedness":"reverse"
+    },{
+        "r1_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX1603392_T1_1.fastq.gz",
+        "r2_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX1603392_T1_2.fastq.gz",
+        "sample_name": "SRX1603392",
+        "strandedness":"reverse"
+    },{
+        "r1_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX1603393_T1_1.fastq.gz",
+        "r2_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX1603393_T1_2.fastq.gz",
+        "sample_name": "SRX1603393",
+        "strandedness":"reverse"
+    },{
+        "r1_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX2370490_T1_1.fastq.gz",
+        "r2_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX2370490_T1_2.fastq.gz",
+        "sample_name": "SRX2370490",
+        "strandedness":"reverse"
+    },{
+        "r1_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX2370491_T1_1.fastq.gz",
+        "r2_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX2370491_T1_2.fastq.gz",
+        "sample_name": "SRX2370491",
+        "strandedness":"reverse"
+    },{
+        "r1_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX2370468_T1_1.fastq.gz",
+        "r2_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX2370468_T1_2.fastq.gz",
+        "sample_name": "SRX2370468",
+        "strandedness":"reverse"
+    },{
+        "r1_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX2370469_T1_1.fastq.gz",
+        "r2_fastq":"gs://utsab-test-bucket/input-rna/rna-seq/SRX2370469_T1_2.fastq.gz",
+        "sample_name": "SRX2370469",
+        "strandedness":"reverse"
+    }],
+
+    "rnaseq.run_fastqc":true,
+    "rnaseq.trim_reads":false,
+    "rnaseq.remove_rrna":false,
+
+    "rnaseq.sortmerna_reference_path": "",
+    "rnaseq.sortmerna_reference_fasta": [
+        "rfam-5s-database-id98.fasta",
+        "silva-euk-28s-id98.fasta",
+        "rfam-5.8s-database-id98.fasta",
+        "silva-euk-18s-id95.fasta",
+        "silva-bac-16s-id90.fasta",
+        "silva-bac-23s-id98.fasta",
+        "silva-arc-16s-id95.fasta",
+        "silva-arc-23s-id98.fasta"
+    ],
+
+    "rnaseq.star_rsem_index_base":"gs://utsab-test-bucket/cromwell-out-prepare-genome/out",
+    "rnaseq.star_rsem_index_files":[
+        "exonGeTrInfo.tab",
+        "geneInfo.tab",
+        "transcriptInfo.tab",
+        "exonInfo.tab",
+        "sjdbList.fromGTF.out.tab",
+        "chrName.txt",
+        "chrStart.txt",
+        "chrLength.txt",
+        "chrNameLength.txt",
+        "sjdbInfo.txt",
+        "sjdbList.out.tab",
+        "genomeParameters.txt",
+        "Genome",
+        "SA",
+        "SAindex",
+        "genome.grp",
+        "genome.ti",
+        "genome.chrlist",
+        "genome.transcripts.fa",
+        "genome.seq",
+        "genome.idx.fa",
+        "genome.n2g.idx.fa"
+    ]
+
+}
