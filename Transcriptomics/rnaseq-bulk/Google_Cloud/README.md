@@ -63,10 +63,7 @@ All the data needs to be transfered from S3 buckets to Google Cloud Storage buck
 
    ```gcloud beta lifesciences pipelines run --pipeline-file wdl_pipeline.yaml --location us-central1 --regions us-central1 --inputs-from-file WDL=prepare-genome.wdl,WORKFLOW_INPUTS=prepare-genome.json,WORKFLOW_OPTIONS=prepare-genome.options.json --env-vars WORKSPACE=gs://utsab-test-bucket/cromwell-out-prepare-genome/work,OUTPUTS=gs://utsab-test-bucket/cromwell-out-prepare-genome/out --logging gs://utsab-test-bucket/cromwell-out-prepare-genome/logging```
 4. Once the prepare-genome workflow is done executing, take a note of the output directory which you'll need to add in to the ```rnaseq.star_rsem_index_base``` parameter in rnaseq-bulk.json.    
-5. Execute the rnaseq-bulk workflow using the lifesciences API. Below is a sample command that I used for execution:
+5. Edit the rnaseq-bulk.json file to reflect the correct input file paths. Just like the prepare-genome workflow, you'll have to copy over input files from S3 buckets to Google Cloud Storage Buckets
+6. Execute the rnaseq-bulk workflow using the lifesciences API. Below is a sample command that I used for execution:
 
    ```gcloud beta lifesciences pipelines run --pipeline-file wdl_pipeline.yaml --location us-central1 --regions us-central1 --inputs-from-file WDL=rnaseq-bulk.wdl,WORKFLOW_INPUTS=rnaseq-bulk.json,WORKFLOW_OPTIONS=rnaseq-bulk.options.json --env-vars WORKSPACE=gs://utsab-test-bucket/cromwell-out-rnaseq-bulk/work,OUTPUTS=gs://utsab-test-bucket/cromwell-out-rnaseq-bulk/out --logging gs://utsab-test-bucket/cromwell-out-rnaseq-bulk/logging```
-
-
-
-
