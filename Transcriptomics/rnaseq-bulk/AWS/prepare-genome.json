@@ -1,0 +1,4 @@
+{
+    "RNASeqBulkPrepareGenome.genes_gtf":"s3://ngi-igenomes/igenomes/Homo_sapiens/NCBI/GRCh38/Sequence/STARIndex/genes.gtf",
+    "RNASeqBulkPrepareGenome.genome_fa":"s3://ngi-igenomes/igenomes/Homo_sapiens/NCBI/GRCh38/Sequence/STARIndex/genome.fa"
+}
