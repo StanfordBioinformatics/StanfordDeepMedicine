@@ -44,7 +44,7 @@ Chaining of outputs is an important thing to keep in mind while executing pipeli
 1. [BWA](http://bio-bwa.sourceforge.net/): BWA is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome
    A prototype dsub command for BWA would look like
    
-   ```dsub --provider google-v2 --project <insert project id> --zones "<insert zone>" --logging <insert logging bucket path> --input-recursive FASTQ_INPUT=<insert FASTQ input files path> --input-recursive REFERENCE=<insert reference files path> --output OUTPUT_FILE=<insert output bucket path, with /* at the end> --min-ram <RAM of VM you want BWA to be executed on> --min-cores <vCPUs of VM you want BWA to be executed on> --image pegi3s/bwa --command 'bwa mem -t 4 -M -R "@RG\\tID:0\\tLB:Library\\tPL:Illumina\\tSM:" "${REFERENCE}"/GRCh37-lite.fa "${FASTQ_INPUT}"/<insert filename of first fastq file> "${FASTQ_INPUT}"/<insert filename of second fastq file> > "$(dirname ${OUTPUT_FILE})"/bwa-sam.sam'```
+   ```dsub --provider google-v2 --project <insert project id> --zones "<insert zone>" --logging <insert logging bucket path> --input-recursive FASTQ_INPUT=<insert FASTQ input files path> --input-recursive REFERENCE=<insert reference files path> --output OUTPUT_FILE=<insert output bucket path, with /* at the end> --machine-type <e.g., n1-standard-8> --image pegi3s/bwa --command 'bwa mem -t 4 -M -R "@RG\\tID:0\\tLB:Library\\tPL:Illumina\\tSM:" "${REFERENCE}"/GRCh37-lite.fa "${FASTQ_INPUT}"/<insert filename of first fastq file> "${FASTQ_INPUT}"/<insert filename of second fastq file> > "$(dirname ${OUTPUT_FILE})"/bwa-sam.sam'```
    
    The command we used for execution looked like 
    
